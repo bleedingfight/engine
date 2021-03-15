@@ -1,0 +1,6 @@
+get_property(PROTO_SRCS GLOBAL PROPERTY "PROTO_SRCS" )
+get_property(PROTO_HDRS GLOBAL PROPERTY "PROTO_HDRS" )
+get_property(PROTOC_PATH GLOBAL PROPERTY "PROTO_SRCS_PATH")
+include_directories(${CMAKE_SOURCE_DIR}/tools/include)
+file(GLOB TOOLS_SRC "src/*.cpp")
+add_library(modelConfig SHARED ${TOOLS_SRC} ${PROTO_SRCS} ${PROTO_HDRS} )

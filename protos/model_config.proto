@@ -1,0 +1,13 @@
+syntax = "proto3";
+message ModelConfig {
+  oneof config {
+    string caffeProto=1;
+    string darknetCfg=2;
+    string tensorflowPbtxt = 3;
+  };
+  oneof weight{
+    string caffeModel=4;
+    string darknetWeight=5;
+    string tensorflowFrozen=6;
+  }
+}
